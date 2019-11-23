@@ -19,11 +19,16 @@ module "lambda_function_sample" {
   source            = "./modules/lambda_function"
   function_name     = "sample"
   lambda_layer_arns = [module.lambda_layer_http.layer_arn]
+  dlq_handler_arn   = module.lambda_function_dlq_handler.function_arn
 }
 
 module "lambda_layer_http" {
   source     = "./modules/lambda_layer"
   layer_name = "http_module"
+}
+
+module "lambda_function_dlq_handler" {
+  source = "./modules/lambda_function_dlq_handler"
 }
 
 /* ====================

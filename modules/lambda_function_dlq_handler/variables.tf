@@ -7,10 +7,6 @@ variable "region" {
   default = "ap-northeast-1"
 }
 
-variable "function_name" {
-  type = string
-}
-
 variable "lambda_layer_arns" {
   type    = list
   default = []
@@ -29,9 +25,4 @@ variable "memory" {
 variable "concurrent_limitation" {
   type    = string
   default = "-1"
-}
-
-variable "dlq_handler_arn" {
-  type    = string
-  default = ""
 }
