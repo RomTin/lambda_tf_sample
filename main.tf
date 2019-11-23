@@ -31,6 +31,14 @@ module "lambda_function_dlq_handler" {
   source = "./modules/lambda_function_dlq_handler"
 }
 
+module "cloudwatch_dashboard" {
+  source          = "./modules/cloudwatch_dashboard"
+  sns_topic_names = [module.lambda_function_sample.sns_name]
+  sqs_queue_names = [module.lambda_function_sample.sqs_name]
+  dlq_queue_names = [module.lambda_function_sample.dlq_name]
+  lambda_names    = [module.lambda_function_sample.function_name]
+}
+
 /* ====================
 Argument variables
 ==================== */

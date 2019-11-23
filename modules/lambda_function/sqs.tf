@@ -1,4 +1,16 @@
 /* ====================
+Output
+==================== */
+
+output "sqs_name" {
+  value = aws_sqs_queue.function_queue.name
+}
+
+output "dlq_name" {
+  value = aws_sqs_queue.function_dlq.name
+}
+
+/* ====================
 SQS
 ==================== */
 
