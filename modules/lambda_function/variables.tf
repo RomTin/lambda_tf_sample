@@ -8,25 +8,25 @@ variable "region" {
 }
 
 variable "function_name" {
-    type = string
+  type = string
 }
 
 variable "lambda_layer_arns" {
-  type        = list
-  default     = []
+  type    = list
+  default = []
 }
 
 variable "timeout" {
-  type        = string
-  default     = "60"
+  type    = string
+  default = "60"
 }
 
 variable "memory" {
-  type        = string
-  default     = "128"
+  type    = string
+  default = "128"
 }
 
 variable "concurrent_limitation" {
-  type        = string
-  default     = "-1"
+  type    = string
+  default = "-1"
 }

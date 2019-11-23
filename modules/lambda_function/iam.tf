@@ -38,4 +38,17 @@ data "aws_iam_policy_document" "lambda_role_policy_document" {
     resources = ["*"]
     actions   = ["logs:*"]
   }
+
+  statement {
+    sid       = "${var.function_name}RoleLambdaSQS"
+    effect    = "Allow"
+    resources = [aws_sqs_queue.function_queue.arn]
+
+    actions = [
+      "sqs:ChangeMessageVisibility",
+      "sqs:DeleteMessage",
+      "sqs:GetQueueAttributes",
+      "sqs:ReceiveMessage",
+    ]
+  }
 }
