@@ -1,0 +1,6 @@
+.terraform
+terraform.tfstate*
+*.zip
+env.sh
+main.tfvars
+__pycache__
